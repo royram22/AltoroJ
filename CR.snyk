@@ -1,7 +1,7 @@
 custom_rules:
   - id: 'Custom XSS Sink'
     description: 'Test of custom XSS Sink rule'
-    severity: 'critical'
+    severity: 'high'
     cwe: 'CWE-725'
     fix_analysis: 'Fix Analysis for custom XSS Sink Rule'
     rule_code: 'CustomTaintVuln<PRED:Source,PRED:None, PRED:XssSink>'
