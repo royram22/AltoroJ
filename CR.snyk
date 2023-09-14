@@ -1,11 +1,10 @@
 custom_rules:
-  - id: 'test'
+  - id: 'GetWriter'
     description: 'test'
     severity: 'high'
-    cwe:
-      - 'CWE-123'
+    cwe: []
     fix_analysis: 'test'
-    rule_code: 'CustomTaintVuln<PRED:AnySource,PRED:None, PRED:XssSink>'
+    rule_code: '"getWriter"'
     languages:
       - 'apex'
       - 'c'
@@ -14,11 +13,8 @@ custom_rules:
       - 'go'
       - 'java'
       - 'javascript'
-      - 'kotlin'
       - 'php'
       - 'python'
       - 'ruby'
-      - 'scala'
-      - 'swift'
       - 'typescript'
-      - 'vb'
+
