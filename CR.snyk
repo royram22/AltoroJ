@@ -1,5 +1,5 @@
 policies:
-- if: [ CommandInjection ]
+- if: [ XSS ]
   then: ignore
 
 custom_rules:
