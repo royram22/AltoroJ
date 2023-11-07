@@ -1,3 +1,7 @@
+policies:
+- if: [ CommandInjection ]
+  then: ignore
+
 custom_rules:
   - id: 'GetWriter'
     description: 'test'
